@@ -1,23 +1,36 @@
 import React from "react";
 import "./Header.css";
+import SearchIcon from '@material-ui/icons/Search';
+import SearchLogo from "./SearchLogo";
+import FacebookIcon from "./facebook-f.svg"
+
+{/* <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta> */}
 
 function Header() {
     return (
-        <div className='header'>
+        <div className="header">
             <div className="header__left">
-                <img
-                    src="https://logoeps.com/wp-content/uploads/2011/08/the-facebook-logo.jpg"
-                    alt=""
-                />
+                <div className="facebook-icon">
+                    <svg id="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>
+                </div>
+                <div className="search-box-container">
+                    <SearchLogo />
+                </div>
             </div>
-            <h1></h1>
-            <div className="header__middle"></div>
+            <div className="header__middle">
+                <h1>middle</h1>
+            </div>
 
-            <div className="header__right"></div>
+            <div className="header__right">
+                <h1>right</h1>
+            </div>
         </div>
 
     )
 
 }
+
+
+
 
 export default Header
