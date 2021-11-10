@@ -37,17 +37,17 @@
   width: 0; */
 }
 
-#icon{
-  transform: translate(0.8em, 0.6em);
+#logo{
+  transform: translateY(0.6em);
   width: 4.40em;
   height: 4.20em;
 }
 
-#icon path{
+#logo path{
   fill: white;
 }
 
-.facebook-icon{
+.facebook-logo{
   flex: 0 0 5.3rem;
   margin-right: 1.0rem;
   overflow: hidden;

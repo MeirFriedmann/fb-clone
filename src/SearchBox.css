@@ -1,0 +1,90 @@
+.container{
+  display: flex;
+  flex: 1 0 5.5rem;
+  width: 15.5vw;
+  height: 5.5rem;
+  border-radius: 10rem / 10rem;
+  background-color: #3A3B3C;
+  align-items: center;
+  justify-items: left;
+  overflow: hidden;
+}
+
+.search-icon{
+  flex: 0;
+  width: 5rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(1.58rem) rotate(45deg);
+}
+
+.search-icon-circle{
+  background: #3A3B3C;
+  width: 1.5rem !important;
+  height: 1.5rem !important;
+  display:flex;
+  align-items: center !important;
+  justify-content: space-evenly !important;
+  border-radius: 50%;
+  border: 0.3rem solid;
+  border-color: #B0B3B8;
+}
+
+.stick{
+  transform: rotate(90deg);
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.trapeze{
+  border-top: 1em solid #B0B3B8 !important;
+  border-left: 0.080em solid transparent !important;
+  border-right: 0.080em solid transparent !important;
+  height: 0.13em;
+  width: 0.273em;
+}
+
+.stick-circle{
+  position: absolute;
+  transform: translateY(-0.3rem);
+  top: 0.13rem;
+  width: 0.43rem;
+  height: 0.43rem;
+  border-radius: 50%;
+  background: #B0B3B8;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.decoration{
+  flex: 0.2; 
+  width: 0.01rem !important;
+  height: 0.06rem !important;
+  border-radius: 0 0 100% 0;
+  background: #3A3B3C;
+  transform: translateX(0.008rem);
+}
+ 
+.decoration2{
+  flex: 0.2; 
+  width: 0.01rem !important;
+  height: 0.06rem !important;
+  border-radius: 0 0 0 100%;
+  transform: translateX(-0.008rem);
+  background: #3A3B3C;
+  }
+
+#inputSearch{
+  padding-left: 2.8rem;
+  background-color: transparent;
+  border-color: transparent;
+  border: 0rem;
+  outline: 0rem;
+  width: 13vw;
+  height: 8rem;
+  font-size: 2rem;
+}
