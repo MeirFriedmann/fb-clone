@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: #18191A;
+  /* background-color: #18191A; */
   height: 100vh;
   width: 100vw;
 }
@@ -9,28 +9,54 @@
   display: flex;
   justify-content: space-evenly;
   height: 100vh;
+  /* border: solid green; */
+  overflow:hidden;
 }
 
 .Feed {
-  background-color: #242526;
+  background-color: #18191A;
+  /* border: solid red; */
   margin: 0 1.5rem;
-  flex: 0.6;
+  flex: 1.1 0 65%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .Sidebar {
-  flex:0.2;
-  background-color: #db2882;
+  flex:0.175;
+  background-color: #220c17;
 }
 
 .Contacts {
-  flex: 0.2;
-  background-color: #48bd3e;
+  flex: 0.175;
+  /* border: solid yellow; */
+  background-color: #0b2009;
 }
 
 .Header {
   background-color: #242526;
   display: flex;
-  color: red;
-  border-style: solid;
+  /* color: red; */
+  /* border-style: solid; */
 }
 
+.create_post_container{
+  width: 480px;
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* border: purple solid; */
+}
+
+
+.opacitySolid{
+  z-index: -2;
+  position: absolute;
+  background-color: black;
+  height: 100vh;
+  width: 100vw;
+  opacity: 0.6;
+
+}

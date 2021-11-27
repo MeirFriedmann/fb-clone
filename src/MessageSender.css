@@ -1,0 +1,82 @@
+.messageSender{
+    display: flex;
+    flex: 1;
+    /* border: red solid; */
+    margin-top: 10rem;
+    flex-direction: column;
+    background-color: #242526;
+    border-radius: 10px;
+    /* box-shadow: 0px 5px 7px -7px grey; */
+    /* width: 70vw; */
+    width: 500px;
+}
+
+.messageSender__top{
+    display: flex;
+    border-bottom: 0.5rem solid;
+    padding: 3rem;
+}
+
+.messageSender__top > form{
+    flex: 1;
+    display: flex;
+}
+
+.messageSender__top > form > input{
+    outline-width: 0;
+    border: none;
+    padding: 0.4rem 1.6rem;
+    /* padding: 5px 20px; */
+    margin: 0 2rem;
+    border-radius: 10rem;
+    background-color: #A1B1C1;
+}
+
+/* .messageSender__top > form > button{
+    display: flex;
+} */
+
+.messageSender__input{
+    cursor: pointer;
+    outline-width: 0;
+    border: none;
+    padding: 0.4rem 1.6rem;
+    /* padding: 5px 20px; */
+    margin: 0 2rem;
+    border-radius: 10rem;
+    color: #B0B3B8;
+    background-color: #3A3B3C;
+    font-family:'Segoe UI';  
+    font-weight: normal;
+    font-size: 20px;
+    flex: 1;
+    display: flex;
+    justify-content: left;
+}
+
+.messageSender__bottom {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.messageSender__option {
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    color: grey;
+    margin: 0.3rem;
+    cursor: pointer;
+}
+
+.messageSender__option > h3 {
+    font-size: medium;
+    margin-left: 1rem;
+}
+
+.messageSender__option:hover{
+    background-color: #eff2f5;
+    /* background-color: black; */
+    border-radius: 3rem;
+
+}
+

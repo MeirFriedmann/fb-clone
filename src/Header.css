@@ -6,9 +6,10 @@
 
 .header__left {
   /* flex: 0.2; */
+  z-index: 2;
   align-items: center;
-  border-style: solid;
-  border-color: greenyellow;
+  /* border-style: solid; */
+  /* border-color: greenyellow; */
   display: flex;
   flex-direction: row;
   /* width: 20rem; */
@@ -18,8 +19,7 @@
 
 .header__middle{
   flex: 0.1;
-  border-style:groove;
-  border-color: rgb(213, 47, 255);
+  /* border-color: rgb(213, 47, 255); */
   width: 10rem;
   height: 9rem;
 }
@@ -59,3 +59,4 @@
   justify-content: center;
   background: linear-gradient(#36b5ff, #0166E2);
 }
+

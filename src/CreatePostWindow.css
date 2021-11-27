@@ -1,0 +1,97 @@
+.create_post > button{
+    /* display: none; */
+}
+
+.create_post{
+    /* display: flex;
+    flex-direction: column;
+    align-items: flex-end; */
+    /* justify-content: space-around; */
+    /* background-color: #1573d1; */
+    background-color: #242526;
+
+    width: 480px;
+    height: 410px;
+    border: 0.5px solid #2F3031;
+    /* z-index: 2; */
+    border-radius: 10px;
+    /* border:solid rgb(162, 184, 63); */
+    /* color: #48bd3e; */
+    
+    /* z-index: -1; */
+    
+    /* display: none; */
+    position: absolute;
+    top: 28rem;
+    /* left: 20%; */
+  
+  }
+
+.create_post > form{
+    height: 90%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+
+    .create_post > form > input{
+    height: 100%;
+    width: 90%;
+    background-color: transparent;
+    border: none;
+    color: #8A8D91;
+
+    display: flex;
+
+}
+
+.create_post > form  :focus{
+    outline: none;
+}
+
+
+.create_post > form > button {
+    background-color: #505151;
+    border-radius: 6px;
+    width: 56rem;
+    height: 40px;
+    border:none;
+    color: #8A8D91;
+    margin: 2em;
+    /* font-family: Helvetica; */
+    font-family: 'Segoe UI';
+    font-weight: 650;
+    font-size: 16px;
+    cursor: not-allowed ;
+    /* font-family: "Helvetica Neue"; */
+}
+
+.create_post__input_box > input{ 
+    background-color: transparent;
+    border: none;
+    font-size: 26px;
+    font-family: 'Segoe UI';
+    width: 100%;
+    color:#B0B3B8
+
+
+}
+.create_post__input_box{
+    display:flex;
+    align-items: right;
+    width: 100%;
+    height: 80%;
+    color: transparent;
+    margin-left: 2em;
+
+}
+
+.create_post__top{
+    height: 10%;
+    color: white;
+    border-bottom: 0.5px solid #8A8D91;
+}
