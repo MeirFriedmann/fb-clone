@@ -54,22 +54,60 @@
     /* color: #B0B3B8; */
 }
 
-
-.create_post > form > button {
-    /* background-color: #505151; */
-    border-radius: 6px;
+.create_post__button{
+    background-color: rgb(0, 0, 0);
     width: 56rem;
     height: 40px;
+    margin: 3em;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+}
+.create_post__button> button {
+    /* background-color: #505151; */
     border:none;
+    flex: 1;
     /* color: #8A8D91; */
-    margin: 2em;
     /* font-family: Helvetica; */
     font-family: 'Segoe UI';
     font-weight: 650;
     font-size: 16px;
     /* cursor: not-allowed ; */
+    /* position: absolute; */
+    /* font-family: "Helvetica Neue"; */
+    border-radius: 6px;
+}
+
+.button_overlay {
+    /* background-color: #505151; */
+    /* top: 0; */
+    /* transform: translateY(-2.85em); */
+    /* opacity: 0.0000001; */
+    /* opacity: 1; */
+    opacity: 0;
+    flex: 1;
+    /* display: none; */
+    position: absolute;
+    border-radius: 6px;
+    z-index: 2;
+    width: 56rem;
+    height: 38.5px;
+    /* top: 85%; */
+    /* color: #8A8D91; */
+    background-color: white;
+    cursor: pointer ;
+
+    /* margin: 2em; */
+    /* font-family: Helvetica; */
+    
     
     /* font-family: "Helvetica Neue"; */
+}
+div.button_overlay:hover {
+    cursor: pointer ;
+    /* border: solid red; */
+    z-index: 2;
+    opacity: 0.1;
 }
 
 
