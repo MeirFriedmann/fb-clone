@@ -24,12 +24,23 @@ function CreatePostWindow(props: {
     // document.getElementsByClassName("create_post_container")[0].setAttribute('style', 'display:none')
     document.body.style.overflow = "visible";
     props.SetTemp("");
+    props.isInProcess(false);   
     props.ToggleWindow();
-    props.isInProcess(false);
-    // props.SetTemp("What's on your mind, ".concat(props.Username).concat("?"))
+
   };
 
+//   if (props.Temp.replace(/\s/g, "") !== ""){
+//     document.getElementsByClassName("create_post__button")[0].setAttribute('style', 'background-color:#2374E1; color:white; cursor:pointer' );
+//   }
+const styles = {
+
+        backgroundColor: `${props.Temp.replace(/\s/g, "")!==''? '#2374E1' : '#505151'}`,
+        cursor: `${props.Temp.replace(/\s/g, "")!==''? 'pointer' : 'not-allowed'}`,
+        color: `${props.Temp.replace(/\s/g, "")!==''? 'white' : '#8A8D91'}`,
+
+  } 
   return (
+    
     <div className="create_post">
         <div className="create_post__top">
             <h1>Create Post</h1>
@@ -51,15 +62,18 @@ function CreatePostWindow(props: {
           }}
           placeholder={`What's on your mind, ${props.Username}?`}
           autoFocus={true}
+
         />
         </div>
         {/* <input placeholder = "image URL (Optional)" /> */}
-        <button onClick={(e) => handleSubmit(e)} type="submit">
+        <button className="create_post__button" onClick={(e) => handleSubmit(e)} type="submit" 
+        style={ styles} >
           Post
         </button>
       </form>
     </div>
   );
 }
+
 
 export default CreatePostWindow;

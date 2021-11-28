@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./MessageSender.css"
 
 
@@ -11,7 +11,10 @@ function MessageSender(props: {
 }) {
 
 
-    const [input, setInput] = useState('');
+    const [text, setText] = useState('');
+    useEffect(() => {
+        setText(props.TempNew);
+      });
 
     // const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
     //     e.preventDefault();
@@ -42,7 +45,7 @@ function MessageSender(props: {
                         className="messageSender__input"
                         onClick={(e) => handleClick(e)}
                     >
-                         {props.TempNew} 
+                         <div className="messageSender__text">{text}</div> 
                     </div>
                     {/* <input placeholder = "image URL (Optional)" /> */}
 

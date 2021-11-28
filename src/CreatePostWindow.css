@@ -41,34 +41,37 @@
     .create_post > form > input{
     height: 100%;
     width: 90%;
-    background-color: transparent;
+    /* background-color: transparent; */
     border: none;
     color: #8A8D91;
-
+    /* background-color: blue; */
     display: flex;
 
 }
 
 .create_post > form  :focus{
     outline: none;
+    /* color: #B0B3B8; */
 }
 
 
 .create_post > form > button {
-    background-color: #505151;
+    /* background-color: #505151; */
     border-radius: 6px;
     width: 56rem;
     height: 40px;
     border:none;
-    color: #8A8D91;
+    /* color: #8A8D91; */
     margin: 2em;
     /* font-family: Helvetica; */
     font-family: 'Segoe UI';
     font-weight: 650;
     font-size: 16px;
-    cursor: not-allowed ;
+    /* cursor: not-allowed ; */
+    
     /* font-family: "Helvetica Neue"; */
 }
+
 
 .create_post__input_box > input{ 
     background-color: transparent;
@@ -76,7 +79,7 @@
     font-size: 26px;
     font-family: 'Segoe UI';
     width: 100%;
-    color:#B0B3B8
+    color:#E4E6EB;
 
 
 }
@@ -88,6 +91,15 @@
     color: transparent;
     margin-left: 2em;
 
+}
+
+.create_post__input_box > input:focus::placeholder {
+    color: #8A8D91;
+
+}
+
+.create_post__input_box > input::placeholder{
+    color: #B0B3B8;
 }
 
 .create_post__top{
