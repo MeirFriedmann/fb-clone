@@ -1,0 +1,202 @@
+
+
+.create_post {
+  display: flex;
+  flex-direction: column;
+    /* display: flex;
+    flex-direction: column;
+    align-items: flex-end; */
+  /* justify-content: space-around; */
+  /* background-color: #1573d1; */
+  background-color: #242526;
+  /* padding-left: 3em;
+  padding-right: 3em; */
+  width: 480px;
+  height: 410px;
+  border: 0.5px solid #2f3031;
+  /* z-index: 2; */
+  border-radius: 10px;
+  /* border:solid rgb(162, 184, 63); */
+  /* color: #48bd3e; */
+
+  /* z-index: -1; */
+
+  /* display: none; */
+  position: absolute;
+  top: 28rem;
+  /* left: 20%; */
+}
+
+.create_post > form {
+  height: 90%;
+  width: 100%;
+  /* flex: 1; */
+  /* border: solid green; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.create_post > form > input {
+  height: 100%;
+  width: 90%;
+  /* background-color: transparent; */
+  border: none;
+  color: #8a8d91;
+  /* background-color: blue; */
+  display: flex;
+}
+
+.create_post > form :focus {
+  outline: none;
+  /* color: #B0B3B8; */
+}
+
+.create_post__button {
+  /* background-color: solid #cebdbd; */
+  width: 56rem;
+  height: 40px;
+  margin: 2rem;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+}
+.create_post__button > button {
+  /* background-color: #505151; */
+  border: none;
+  flex: 1;
+  /* color: #8A8D91; */
+  /* font-family: Helvetica; */
+  font-family: "Segoe UI";
+  font-weight: 650;
+  font-size: 16px;
+  /* cursor: not-allowed ; */
+  /* position: absolute; */
+  /* font-family: "Helvetica Neue"; */
+  border-radius: 6px;
+}
+
+.button_overlay {
+  /* background-color: #505151; */
+  /* top: 0; */
+  /* transform: translateY(-2.85em); */
+  /* opacity: 0.0000001; */
+  /* opacity: 1; */
+  opacity: 0;
+  /* flex: 1; */
+  /* display: none; */
+  position: absolute;
+  border-radius: 6px;
+  /* z-index: 2; */
+  width: 56rem;
+  height: 38.5px;
+  /* top: 85%; */
+  /* color: #8A8D91; */
+  background-color: white;
+  cursor: pointer;
+
+  /* margin: 2em; */
+  /* font-family: Helvetica; */
+
+  /* font-family: "Helvetica Neue"; */
+}
+.button_overlay:hover {
+  cursor: pointer;
+  display: auto;
+  /* border: solid red; */
+  /* z-index: 2; */
+  opacity: 0.1;
+  background-color:red solid;
+}
+
+.create_post__input_box > input {
+  background-color: transparent;
+  border: none;
+  font-size: 26px;
+  font-family: "Segoe UI";
+  width: 100%;
+  color: #e4e6eb;
+  padding:  2rem;
+}
+.create_post__input_box {
+  display: flex;
+  align-items: right;
+  width: 100%;
+  height: 80%;
+  color: transparent;
+}
+
+.create_post__input_box > input:focus::placeholder {
+  color: #8a8d91;
+}
+
+.create_post__input_box > input::placeholder {
+  color: #b0b3b8;
+}
+
+.create_post__top {
+  height: 10%;
+  color: white;
+  justify-content: right;
+  padding: 1rem;
+  border-bottom: 0.5px solid #2F3031;
+  align-items:center;
+  /* border: solid red; */
+  /* padding-right: 3em; */
+  display: flex;
+}
+
+.create_post__top > span {
+  /* flex: 50%; */
+  margin: auto;
+  font-size: 3.5em;
+  color: #E4E6EB;
+  font-family: "Segoe UI";
+  /* font-family: "frutiger"; */
+  
+  font-weight: 600;
+}
+.exit_window {
+    transform: translateX(-1rem);
+    /* border: solid green; */
+    position: absolute;
+    border-radius: 50%;
+    border: 20px;
+    height: 3em;
+    width: 3em;
+    background-color:#353535;
+    cursor: pointer;
+    /* display:none; */
+}
+.exit_window_overlay {
+    transform: translateX(-1rem);
+    border: none;
+    opacity: 0;
+    position: absolute;
+    border-radius: 50%;
+    width: 3em;
+    height: 3em;
+    background-color:white;
+}
+.exit_window_overlay:hover {
+    opacity: 0.2;
+    transform: translateX(-1rem);
+    cursor: pointer;
+    border: none;
+    position: absolute;
+    border-radius: 50%;
+    width: 3em;
+    height: 3em;
+    background-color:white;
+}
+.exit_window_symbol{
+    transform: translate(0.6px,-2.5px);
+}
+.exit_window_symbol:after{
+    font-size: 40px;
+    color: #A8ABAF;
+    font-weight: 50;
+    /* display: inline-block; */
+    content: "\00d7"; /* This will render the 'X' */
+  }
