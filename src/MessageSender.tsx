@@ -3,11 +3,10 @@ import "./MessageSender.css"
 
 
 function MessageSender(props: {
-    OnAdd: any,
     ToggleWindow: () => void,
     WindowState: boolean,
     TempNew: string,
-    IsNewPostInProcess: boolean
+    isNewPostBeingComposed: boolean
 }) {
 
 
@@ -16,23 +15,9 @@ function MessageSender(props: {
         setText(props.TempNew);
       });
 
-    // const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
-    //     e.preventDefault();
-    //     props.OnAdd(input);
-    //     setInput("");
-    // }
 
     const handleClick = (e: React.MouseEvent<HTMLElement>) => {
         e.preventDefault();
-        document.body.style.overflow = "hidden"
-        // document.getElementsByClassName("create_post_container")[0].setAttribute('style', 'z-index:1')
-        document.getElementsByClassName("opacitySolid")[0].setAttribute('style', 'z-index:0');
-        // setTimeout(() => { })
-        // document.getElementsByName("postInput")[0].setAttribute('autoFocus', '{true}')
-
-        // document.getElementsByName("postInput")[0].addEventListener('keydown', (e) => {
-        //     console.log(e)
-        // })
 
         props.ToggleWindow();
     }
@@ -60,12 +45,12 @@ function MessageSender(props: {
 
                 <div className="messageSender__option">
                     <img src="" alt="2" />
-                    <h3>Photo/Video</h3>
+                    <h3>Photo/video</h3>
                 </div>
 
                 <div className="messageSender__option">
                     <img src="" alt="3" />
-                    <h3>Feeling Activity</h3>
+                    <h3>Feeling/activity</h3>
                 </div>
             </div>
         </div>

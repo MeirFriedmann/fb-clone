@@ -3,6 +3,8 @@
     flex: 1;
     /* border: red solid; */
     margin-top: 10rem;
+    /* padding-right: 12px;
+    padding-left: 12px; */
     flex-direction: column;
     background-color: #242526;
     border-radius: 10px;
@@ -13,11 +15,12 @@
 
 .messageSender__top{
     display: flex;
-    border-bottom: 0.5rem solid;
     padding: 3rem;
 }
 
 .messageSender__top > form{
+    border-bottom: 0.5px solid #3A3B3C;
+    padding-bottom: 1.2em;
     flex: 1;
     display: flex;
 }
@@ -27,7 +30,7 @@
     border: none;
     padding: 0.4rem 1.6rem;
     /* padding: 5px 20px; */
-    margin: 0 2rem;
+    /* margin: 0 2rem; */
     border-radius: 10rem;
     background-color: #A1B1C1;
 }
@@ -42,7 +45,7 @@
     border: none;
     padding: 0.4rem 1.6rem;
     /* padding: 5px 20px; */
-    margin: 0 2rem;
+    /* margin: 0 2rem; */
     border-radius: 10rem;
     color: #B0B3B8;
     background-color: #3A3B3C;

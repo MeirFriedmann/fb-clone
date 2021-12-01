@@ -1,8 +1,9 @@
-.App {
+.app {
   text-align: center;
-  /* background-color: #18191A; */
+  background-color: #18191A;
   height: 100vh;
   width: 100vw;
+  
 }
 
 .Container {
@@ -25,18 +26,17 @@
 
 .Sidebar {
   flex:0.175;
-  background-color: #220c17;
+  /* background-color: #220c17; */
 }
 
 .Contacts {
   flex: 0.175;
   /* border: solid yellow; */
-  background-color: #0b2009;
+  /* background-color: #0b2009; */
 }
 
 .Header {
-  background-color: #242526;
-  display: flex;
+
   /* color: red; */
   /* border-style: solid; */
 }
@@ -51,12 +51,17 @@
 }
 
 
-.opacitySolid{
-  z-index: -2;
+.opacity-solid {
+  z-index: 0;
   position: absolute;
   background-color: black;
   height: 100vh;
   width: 100vw;
   opacity: 0.6;
+  top: 0;
 
+}
+
+body {
+  color: #B0B3B8;
 }

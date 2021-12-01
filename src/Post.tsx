@@ -12,7 +12,7 @@ function Post(props: { username: string, message: string }) {
     return <div className="post">
         {/* <div className="post__top">
         </div> */}
-        <div className="post__topInfo" font-color="white"> 
+        <div className="post__topInfo"> 
             <h3>{props.username}</h3>
             <h3>{ props.message }</h3>
         </div>

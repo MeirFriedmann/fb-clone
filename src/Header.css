@@ -2,6 +2,8 @@
   display: flex;
   justify-content: space-evenly; 
   align-items: center;
+  background-color: #242526;
+  display: flex;
 }
 
 .header__left {
