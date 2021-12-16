@@ -1,62 +1,57 @@
 import React, { useEffect, useState } from "react";
-import "./MessageSender.css"
-
+import "./MessageSender.css";
+import PhotoLibraryIcon from "@material-ui/icons/PhotoLibrary"
 
 function MessageSender(props: {
-    ToggleWindow: () => void,
-    WindowState: boolean,
-    TempNew: string,
-    isNewPostBeingComposed: boolean
+  toggleWindow: () => void;
+  isNewPostWindowVisible: boolean;
+  globalTempNewPost: string;
+  isNewPostBeingComposed: boolean;
+  profilePic: string;
 }) {
+  const [text, setText] = useState("");
+  useEffect(() => {
+    setText(props.globalTempNewPost);
+  });
 
-
-    const [text, setText] = useState('');
-    useEffect(() => {
-        setText(props.TempNew);
-      });
-
-
-    const handleClick = (e: React.MouseEvent<HTMLElement>) => {
-        e.preventDefault();
-
-        props.ToggleWindow();
-    }
-    return (
-        <div className="messageSender">
-
-            <div className="messageSender__top">
-                <form>
-                    <div
-                        className="messageSender__input"
-                        onClick={(e) => handleClick(e)}
-                    >
-                         <div className="messageSender__text">{text}</div> 
-                    </div>
-                    {/* <input placeholder = "image URL (Optional)" /> */}
-
-                    
-                </form>
+  const handleClick = (e: React.MouseEvent<HTMLElement>) => {
+    e.preventDefault();
+    props.toggleWindow();
+  };
+  return (
+    <div className="messageSender">
+      <div className="messageSender__top_container">
+        <div className="messageSender__top">
+          <div className="messageSender__profile_pic"><img src={props.profilePic} /></div>
+          {/* <div className="messageSender__form_container"> */}
+          <form>
+            <div className="messageSender__input" onClick={(e) => handleClick(e)}>
+              {text}
             </div>
-            <div className="messageSender__bottom">
-                <div className="messageSender__option">
-                    <img src="" alt="1" />
-                    <h3>Live Video</h3>
-                </div>
+          </form>
+        </div>
+        {/* </div> */}
+      </div>
+      <div className="messageSender__bottom">
+        {/* <div className="messageSender__option">
+          <img src="" alt="" />
+          <h3>Live Video</h3>
+        </div> */}
 
-                <div className="messageSender__option">
-                    <img src="" alt="2" />
-                    <h3>Photo/video</h3>
-                </div>
-
-                <div className="messageSender__option">
-                    <img src="" alt="3" />
-                    <h3>Feeling/activity</h3>
-                </div>
-            </div>
+        <div className="messageSender__option">
+          <button onClick={(e) => handleClick(e)}>
+          <div className="messageSender__option_icon"><PhotoLibraryIcon  /></div>
+          <h3>Photo/video</h3>
+          </button>
         </div>
 
-    )
-
+        {/* <div className="messageSender__option">
+          <img src="" alt="" />
+          <h3>Feeling/activity</h3>
+        </div> */}
+      </div>
+    </div>
+  );
 }
 
-export default MessageSender
+export default MessageSender;

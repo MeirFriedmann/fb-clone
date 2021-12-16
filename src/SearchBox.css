@@ -87,4 +87,6 @@
   width: 13vw;
   height: 8rem;
   font-size: 2rem;
+  cursor: not-allowed;
+
 }

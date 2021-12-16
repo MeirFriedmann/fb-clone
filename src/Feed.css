@@ -10,3 +10,21 @@
     align-items: center;
     overflow: hidden;
 }
+
+.feed__post_container > img{
+    width: 100px;
+    object-fit: cover;
+}
+
+.feed__post_container{
+    width: 150px;
+    height: 140px;
+    margin: 5px;
+    border: white solid;
+}
+
+.opacity-solid{
+    z-index: 1;
+    height: 200vh;
+    /* position: absolute; */
+}

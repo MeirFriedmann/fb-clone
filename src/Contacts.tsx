@@ -4,7 +4,7 @@ import "./Contacts.css";
 function Contacts(this: any) {
     return (
         <div className="text">
-            <h1>Contactsssssssssssssssssssssssssssssss</h1>
+            {/* <h1>Contactsssssssssssssssssssssssssssssss</h1> */}
         </div>
     )
 

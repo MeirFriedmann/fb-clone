@@ -4,6 +4,12 @@
   align-items: center;
   background-color: #242526;
   display: flex;
+  position: sticky;
+  top:0;
+  z-index: 1;
+  border-bottom: 1px solid #393A3B;
+  cursor:not-allowed;
+
 }
 
 .header__left {
@@ -26,6 +32,15 @@
   height: 9rem;
 }
 
+.header__middle>img{
+  width: 65rem;
+  object-fit: cover ;
+  transform: translateX(-10rem);
+}
+.header__right > img{
+  width: 35rem;
+  object-fit: cover ;
+}
 .header__right{
   flex: 0.2;
   width: 20rem;
@@ -50,6 +65,7 @@
 }
 
 .facebook-logo{
+  z-index: 3;
   flex: 0 0 5.3rem;
   margin-right: 1.0rem;
   overflow: hidden;

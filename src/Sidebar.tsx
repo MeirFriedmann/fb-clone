@@ -4,7 +4,7 @@ import "./Sidebar.css";
 function Sidebar(){
     return (
         <div>
-            <h1>Contactsssssssssssssssssssssssssssssss</h1>
+            {/* <h1>Contactsssssssssssssssssssssssssssssss</h1> */}
         </div>
     )
     
