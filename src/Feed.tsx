@@ -7,8 +7,8 @@ import profilePic from "./css assets/4043272_avatar_lazybones_sloth_sluggard_ico
 
 
 const Feed = (props: {
-  username: {fName:string, lName:string};
-  posts:  {docsData: {id:string, images:string[],text:string, date:Date}[]}
+  username: { fName: string, lName: string };
+  posts: { docsData: { id: string, images: string[], text: string, date: Date }[] }
 }) => {
 
   type postData = {
@@ -34,10 +34,10 @@ const Feed = (props: {
   }, [globalTempNewPost, localTempNewPost]);
 
 
-  const addPostToPosts = (input: string, images: string[], date:Date) => {
-    let newPost :postData =  {id:(Math.floor(Math.random() * 100)).toString(), text:input,images:images, date:date}
+  const addPostToPosts = (input: string, images: string[], date: Date) => {
+    let newPost: postData = { id: (Math.floor(Math.random() * 100)).toString(), text: input, images: images, date: date }
     if (postsList) {
-      setPostsList([newPost,...postsList]);
+      setPostsList([newPost, ...postsList]);
     }
     else setPostsList([newPost])
   };
@@ -82,26 +82,25 @@ const Feed = (props: {
         profilePic={profilePic}
       />
 
-        {postsList?.map(post => 
-          
-          ( 
-            <Post
-             username={props.username.fName+' '+props.username.lName}
-             profilePic = {profilePic}
-            text={post.text}
-            images = {post.images}
-            date = {post.date}
-            />
-           ))} 
-      
-      {props.posts.docsData.sort((p1,p2)=>  parseInt(p2.date.toString())-parseInt(p1.date.toString())).map((post: any) => (
-          <Post
-             username={props.username.fName+' '+props.username.lName} 
-             profilePic = {profilePic}
-            text={post.text}
-            images = {post.images}
-            date = { new Date( post.date) }
-            />
+      {postsList?.map(post =>
+      (
+        <Post
+          username={props.username.fName + ' ' + props.username.lName}
+          profilePic={profilePic}
+          text={post.text}
+          images={post.images}
+          date={post.date}
+        />
+      ))}
+
+      {props.posts.docsData.sort((p1, p2) => parseInt(p2.date.toString()) - parseInt(p1.date.toString())).map((post: any) => (
+        <Post
+          username={props.username.fName + ' ' + props.username.lName}
+          profilePic={profilePic}
+          text={post.text}
+          images={post.images}
+          date={new Date(post.date)}
+        />
       ))}
       {
         isNewPostWindowVisible && (
