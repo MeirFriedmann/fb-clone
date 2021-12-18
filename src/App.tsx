@@ -24,7 +24,7 @@ function App() {
     date: Date
   }
   let initDocsData: postData =
-    { id: '', text: '@@@@', images: [''], date: new Date()}
+    { id: '', text: 'Please Wait', images: [''], date: new Date()}
 
   let docs :{docsData: postData[];} =
   { docsData: [initDocsData] }

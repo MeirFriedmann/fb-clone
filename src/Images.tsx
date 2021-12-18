@@ -1,54 +1,13 @@
 import "./Images.css"
-import { useRef } from "react"
-import CSS from 'csstype'
-import { height } from "@mui/system"
+// import { useRef } from "react"
+// import CSS from 'csstype'
 
 const Images = (props: { images: string[] }) => {
 
     const images = props.images.slice(1) // remove empty image
 
-    // images.map(image => {
-    //     let img = new Image();
-    //     img.src = image;
-    //     if (img.width / img.height < 1) hasVerticalFlag = true;
-    // }
-    // )
-
-    // let hasVerticalFlag: boolean = false;
-
-    // // handles 2 images dimensions settings and flex direction: 
-    // const firstImgRef = useRef<HTMLImageElement>(null);
-    // const hasVertical = (): boolean => {
-    //     if (hasVerticalFlag) return hasVerticalFlag;
-    //     if (firstImgRef.current?.clientWidth) {
-    //         let width: number = (firstImgRef.current?.clientWidth);
-    //         let height: number = (firstImgRef.current?.clientHeight);
-    //         if (width && height)
-    //             if (height / width > 1) {
-    //                 hasVerticalFlag = true;
-    //                 return hasVerticalFlag;
-    //             }
-    //             else return hasVerticalFlag;
-    //         return hasVerticalFlag;
-    //     }
-    //     else return hasVerticalFlag;
-    // }
-    const numberOfImages = ['one', 'two', 'three', 'four', 'five']
-
-
-    let imgStyles: CSS.Properties = {}
-    let divStyles: CSS.Properties = {}
-    // if (!hasVertical()) imgStyles = { objectFit: 'cover', width: '86rem', maxHeight: '100%', border: '1px solid white' }
-    // if (!hasVertical()) divStyles = { flexDirection: 'column', height: '42rem' }
-    // if (hasVertical())
-    //  imgStyles = { objectFit: 'cover', width: '43rem', height: '100%', border: '1px solid green' }
-    // if (hasVertical())
-    //  divStyles = { height: '37.3rem', alignItems: 'center' }
-    // console.log(hasVertical())
-    // let noDisplay: CSS.Properties = { zIndex: -3, position: 'absolute' }
     return (
         <div className="images">
-
             {images.length === 1 &&
                 <div className="one-image">
                     <img src={images[0]} alt="" />
@@ -118,3 +77,43 @@ const Images = (props: { images: string[] }) => {
 }
 
 export default Images
+
+  // images.map(image => {
+    //     let img = new Image();
+    //     img.src = image;
+    //     if (img.width / img.height < 1) hasVerticalFlag = true;
+    // }
+    // )
+
+    // let hasVerticalFlag: boolean = false;
+
+    // // handles 2 images dimensions settings and flex direction: 
+    // const firstImgRef = useRef<HTMLImageElement>(null);
+    // const hasVertical = (): boolean => {
+    //     if (hasVerticalFlag) return hasVerticalFlag;
+    //     if (firstImgRef.current?.clientWidth) {
+    //         let width: number = (firstImgRef.current?.clientWidth);
+    //         let height: number = (firstImgRef.current?.clientHeight);
+    //         if (width && height)
+    //             if (height / width > 1) {
+    //                 hasVerticalFlag = true;
+    //                 return hasVerticalFlag;
+    //             }
+    //             else return hasVerticalFlag;
+    //         return hasVerticalFlag;
+    //     }
+    //     else return hasVerticalFlag;
+    // }
+    // const numberOfImages = ['one', 'two', 'three', 'four', 'five']
+
+
+    // let imgStyles: CSS.Properties = {}
+    // let divStyles: CSS.Properties = {}
+    // if (!hasVertical()) imgStyles = { objectFit: 'cover', width: '86rem', maxHeight: '100%', border: '1px solid white' }
+    // if (!hasVertical()) divStyles = { flexDirection: 'column', height: '42rem' }
+    // if (hasVertical())
+    //  imgStyles = { objectFit: 'cover', width: '43rem', height: '100%', border: '1px solid green' }
+    // if (hasVertical())
+    //  divStyles = { height: '37.3rem', alignItems: 'center' }
+    // console.log(hasVertical())
+    // let noDisplay: CSS.Properties = { zIndex: -3, position: 'absolute' }
