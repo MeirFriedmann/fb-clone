@@ -6,14 +6,12 @@ import Sidebar from "./Sidebar";
 import Feed from "./Feed";
 import firebase from "firebase/app";
 import 'firebase/firestore';
-import { app } from "./firebase/firebase.utils";
+import { app } from "./firebase/firebase.utils.js";
 
 
-// import 'firebase/storage';  // <----
 
 function App() {
 
-  console.log(process.env.REACT_APP_AUTH_DOMAIN);
 
 
 //post type
