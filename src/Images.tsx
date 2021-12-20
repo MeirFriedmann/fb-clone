@@ -10,7 +10,7 @@ const Images = (props: { images: string[] }) => {
         <div className="images">
             {images.length === 1 &&
                 <div className="one-image">
-                    <img src={images[0]} alt="" />
+                    <img src={images[0]} alt=""/>
                 </div>}
 
             {images.length === 2 &&

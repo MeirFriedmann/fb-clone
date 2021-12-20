@@ -1,10 +1,7 @@
-import React from "react";
 import "./Header.css";
 import SearchBox from "./SearchBox";
 import {ReactComponent as FacebookLogo} from "./css assets/facebook-f.svg";
 import leftIconsScreenshot from "./css assets/Screenshot1.jpg"
-
-{<meta name="viewport" content="width=device-width, initial-scale=1.0"></meta> }
 
 function Header() {
     return (

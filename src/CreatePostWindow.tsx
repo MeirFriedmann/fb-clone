@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./CreatePostWindow.css";
 import { app } from "./firebase/firebase.utils";
 import Images from "./Images";
+import PhotoLibraryIcon from "@material-ui/icons/PhotoLibrary"
 
 const CreatePostWindow = (props: {
   // addPostToPosts: (_: string) => void;
@@ -15,14 +16,23 @@ const CreatePostWindow = (props: {
   setNewImages: (_: File[]) => void;
   newImagesPath: string[];
   setNewImagesPath: (_: string[]) => void;
+  isAddPhotoGlobal: boolean;
+  removeImages: () => void;
 
 }) => {
-  const [newImages, setNewImages] = useState<File[]>([new File([""], "")]);
+  // const [newImages, setNewImages] = useState<File[]>([new File([""], "")]);
 
+  const [isAddPhotoLocal, setIsAddPhotoLocal] = useState(false);
 
+  const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsAddPhotoLocal(true);
+  }
 
+  let isAddPhoto = props.isAddPhotoGlobal || isAddPhotoLocal;
+  
   const uploadPostData = () => {
-    if (props.newImages.length == 1) {
+    if (props.newImages.length === 1) {
       putPostInDB(props.localTempNewPost, ['']);
       return;
     }
@@ -33,7 +43,7 @@ const CreatePostWindow = (props: {
         const pathReference = storageRef.child("images/" + props.newImages[i].name);
         pathReference.put(props.newImages[i]).then(data => {
           data.ref.getDownloadURL().then((url: Promise<string>) => {
-            console.log(url);
+            // console.log(url);
             urls.push(url.toString());
             return new Promise<string[]>((resolve) => { if (urls.length === props.newImages.length - 1) resolve(urls) })
           }).then(
@@ -56,10 +66,10 @@ const CreatePostWindow = (props: {
         date: Date.now()
       })
       .then((docRef) => {
-        console.log("Document written with ID: ", docRef.id);
+        // console.log("Document written with ID: ", docRef.id);
       })
       .catch((error) => {
-        console.error("Error adding document: ", error);
+        // console.error("Error adding document: ", error);
       });
   };
 
@@ -86,6 +96,7 @@ const CreatePostWindow = (props: {
     e.preventDefault();
     props.toggleWindow();
   };
+
   const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if (isBlank(props.localTempNewPost)) return;
@@ -93,9 +104,22 @@ const CreatePostWindow = (props: {
     props.onSubmit();
   };
 
+
+  
+  const handleImagesExit = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    props.setNewImagesPath(['']);
+  };
+  
+  const handleCompleteImagesExit = (e: React.MouseEvent<HTMLButtonElement>) => {
+    setIsAddPhotoLocal(false);
+    e.preventDefault();
+    props.removeImages();
+  }
+  
+
   const button_styles = {
-    backgroundColor: `${!isBlank(props.localTempNewPost) ? "#2374E1" : "#505151"
-      }`,
+    backgroundColor: `${!isBlank(props.localTempNewPost) ? "#2374E1" : "#505151"}`,
     cursor: `${!isBlank(props.localTempNewPost) ? "pointer" : "not-allowed"}`,
     color: `${!isBlank(props.localTempNewPost) ? "white" : "#8A8D91"}`,
   };
@@ -106,11 +130,12 @@ const CreatePostWindow = (props: {
     <div className="create_post">
       <div className="create_post__top">
         <span>Create post</span>
-        <button className="exit_window" onClick={(e) => handleExit(e)}>
+        <button className="exit_window" type='button' onClick={(e) => handleExit(e)}>
           <div className="exit_window_symbol"></div>
         </button>
         <button
           className="exit_window_overlay"
+          type='button'
           onClick={(e) => handleExit(e)}
         ></button>
       </div>
@@ -128,33 +153,88 @@ const CreatePostWindow = (props: {
             autoFocus={true}
           />
         </div>
-        {props.newImagesPath.length>1 && <div className="create_post__images">
+        {props.newImagesPath.length > 1 && <div className="create_post__images">
+          <label>
+            Add Photos
+            <input
+              type="file"
+              multiple
+              accept="image/x-png,image/gif,image/jpeg"
+              onChange={handleChange}
+            />
+          </label>
+          <div className="exit_images_window">
+            <button className="exit_window" 
+            type='button'
+            onClick={(e) => handleImagesExit(e)}>
+              <div className="exit_window_symbol"></div>
+            </button>
+            <button
+              className="exit_window_overlay"
+              type='button'
+              onClick={(e) => handleImagesExit(e)}
+            ></button></div>
+
+
           <Images
             images={props.newImagesPath} />
-
-          {/* <div className="create_post__new_images">
-          {props.newImagesPath.map(
-            (path) => (path !== '') && <img src={path} alt="" />
-          )}
-        </div> */}
-
         </div>
-}
+        }
 
 
         <div className="create_post__buttons">
 
-          <div className="create_post__add_image">
-            <label>
-              Add Image
-              <input
-                type="file"
-                multiple
-                accept="image/x-png,image/gif,image/jpeg"
-                onChange={handleChange}
-              />
-            </label>
-          </div>
+          {
+            isAddPhoto &&
+            props.newImagesPath.length <= 1 && <div className="create_post__add_image">
+              
+              <div className="exit_images_window">
+            <button className="exit_window"
+             type='button'
+             onClick={(e) => handleCompleteImagesExit(e)}
+             >
+              <div className="exit_window_symbol"></div>
+            </button>
+            <button
+              className="exit_window_overlay"
+              type='button'
+              onClick={(e) => handleCompleteImagesExit(e)}
+            ></button></div>
+              
+              <label>
+                Add Photos
+                <input
+                  type="file"
+                  multiple
+                  accept="image/x-png,image/gif,image/jpeg"
+                  onChange={handleChange}
+                />
+              </label>
+
+
+
+            </div>}
+          {
+            !isAddPhoto ?
+              <div className="create_post__add_image_button">
+                <button
+                  type='button'
+                  onClick={handleClick}>
+                  <PhotoLibraryIcon />
+                </button>
+              </div>
+
+              :
+              <div className="create_post__add_image_button_clicked">
+                <button
+                  type='button'
+
+                  onClick={handleClick}>
+                  <PhotoLibraryIcon />
+                </button>
+              </div>
+
+          }
           <div className="create_post__button">
             <button
               onClick={(e) => handleSubmit(e)}

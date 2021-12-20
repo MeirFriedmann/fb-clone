@@ -21,6 +21,7 @@ const Post = (props: { username: string, profilePic: string, text: string, image
     else if (timeDiff < 86400000) { // one day recent
         timestamp = `${Math.floor((timeDiff) / 3600000).toString()}h  · `
     }
+    // eslint-disable-next-line no-eval
     else if (timeDiff < 172800000 && props.date.getDay() === (eval((-1 + now.getDay()).toString()))) { // two days recent
         timestamp = `Yesterday at ${props.date.toLocaleString(undefined, { hour: 'numeric', minute: '2-digit' })}  · `;
     }

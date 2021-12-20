@@ -6,7 +6,7 @@ import Sidebar from "./Sidebar";
 import Feed from "./Feed";
 import firebase from "firebase/app";
 import 'firebase/firestore';
-import { app } from "./firebase/firebase.utils.js";
+import { app } from "./firebase/firebase.utils";
 
 
 
@@ -54,9 +54,10 @@ function App() {
         getPostsFromDatabase(querySnapshot)
       })
       .catch((error) => {
-        console.log("Error getting documents: ", error);
+        // console.log("Error getting documents: ", error);
       });
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
   const username = {
     fName : "Meir",

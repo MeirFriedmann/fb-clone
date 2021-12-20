@@ -25,12 +25,13 @@ const Feed = (props: {
   const [localTempNewPost, setLocalTempNewPost] = useState("");
   const [newImages, setNewImages] = useState<File[]>([new File([""], "")]);
   const [newImagesPath, setNewImagesPath] = useState(['']);
-
+  const [isAddPhotoGlobal,setIsAddPhotoGlobal] = useState(false);
 
   useEffect(() => {
     if (!isNewPostBeingComposed && !isNewPostWindowVisible)
       setGlobalTempNewPost(`What's on your mind, ${props.username.fName}?`);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [globalTempNewPost, localTempNewPost]);
 
 
@@ -57,11 +58,16 @@ const Feed = (props: {
 
 
   const onSubmit = () => {
+    setIsAddPhotoGlobal(false);
     addPostToPosts(localTempNewPost, newImagesPath, new Date());
     setLocalTempNewPost("");
     setNewImagesPath([''])
     setIsNewPostBeingComposed(false);
     toggleWindow();
+  }
+
+  const removeImages = () => {
+    setIsAddPhotoGlobal(false);
   }
 
   return (
@@ -80,9 +86,10 @@ const Feed = (props: {
         globalTempNewPost={globalTempNewPost}
         isNewPostBeingComposed={isNewPostBeingComposed}
         profilePic={profilePic}
+        setIsAddPhotoGlobal ={setIsAddPhotoGlobal}
       />
 
-      {postsList?.map(post =>
+      {postsList?.map( ( post, key) =>
       (
         <Post
           username={props.username.fName + ' ' + props.username.lName}
@@ -90,16 +97,19 @@ const Feed = (props: {
           text={post.text}
           images={post.images}
           date={post.date}
+          key = {key}
+
         />
       ))}
 
-      {props.posts.docsData.sort((p1, p2) => parseInt(p2.date.toString()) - parseInt(p1.date.toString())).map((post: any) => (
+      {props.posts.docsData.sort((p1, p2) => parseInt(p2.date.toString()) - parseInt(p1.date.toString())).map((post: any, key) => (
         <Post
           username={props.username.fName + ' ' + props.username.lName}
           profilePic={profilePic}
           text={post.text}
           images={post.images}
           date={new Date(post.date)}
+          key = {key}
         />
       ))}
       {
@@ -116,6 +126,8 @@ const Feed = (props: {
               setNewImages={setNewImages}
               newImagesPath={newImagesPath}
               setNewImagesPath={setNewImagesPath}
+              isAddPhotoGlobal = {isAddPhotoGlobal}
+              removeImages = {removeImages}
             />
           </div>
         )
