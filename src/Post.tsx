@@ -1,4 +1,4 @@
-import "./Post.css"
+import "./css/Post.css"
 import Public from "@material-ui/icons/Public"
 import Images from "./Images";
 
@@ -53,14 +53,12 @@ const Post = (props: { username: string, profilePic: string, text: string, image
         <div className="post_text">
             {props.text}
         </div>
-        {props.images && 
+        {props.images[0]!=='' && 
         <Images
         images={props.images}
         />
-
-        // <div className="post_images"> {props.images.map((image, i) => { return <img src={image} alt="" /> })}
-        // </div>
         }
+        <div className="post_bottom"></div>
     </div>
 }
 

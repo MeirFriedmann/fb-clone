@@ -1,13 +1,16 @@
 .create_post {
   display: flex;
+  margin: auto;
   flex-direction: column;
   background-color: #242526;
   width: 480px;
   border: 0.5px solid #2f3031;
   border-radius: 10px;
   z-index: 2;
-  position: absolute;
-  top: 28rem;
+  position: fixed;
+  right: 0;
+  left: 0;
+  top:30rem;
 }
 
 .create_post > form {
@@ -19,14 +22,15 @@
   align-items: center;
   justify-content: space-between;
 }
-
+/* 
 .create_post > form > input {
   height: 100%;
   width: 90%;
+  padding-top: 3px;
   border: none;
   color: #8a8d91;
   display: flex;
-}
+} */
 
 .create_post > form :focus {
   outline: none;
@@ -71,13 +75,15 @@
 .create_post__input_box > input {
   background-color: transparent;
   border: none;
-  font-size: 26px;
+  /* font-size: 26px; */
   font-family: "Segoe UI";
   width: 100%;
   color: #e4e6eb;
   padding: 2rem;
 }
 .create_post__input_box {
+  margin-top: 4rem;
+  
   display: flex;
   padding-bottom: 1rem;
   align-items: right;
@@ -153,16 +159,18 @@
   font-size: 40px;
   color: #a8abaf;
   font-weight: 50;
-  content: "\00d7"; /* This will render the 'X' */
+  content: "\00d7"; /* render 'X' */
 }
 
 .create_post__add_image {
   flex: end;
   margin: auto;
   width: 92.6%;
-  border: #3e4042 solid 1px;
+  outline: #2F3031 solid 0.5px;
+  border: #242526 solid 8px;
   padding: 5px #242526;
   border-radius: 10px;
+  text-align: center;
   align-items: center;
   justify-content: center;
   display: flex;

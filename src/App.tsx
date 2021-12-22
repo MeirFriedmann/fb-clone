@@ -1,8 +1,6 @@
-import  {  useEffect, useState } from "react";
-import "./App.css";
-import Contacts from "./Contacts";
+import { useEffect, useState } from "react";
+import "./css/App.css";
 import Header from "./Header";
-import Sidebar from "./Sidebar";
 import Feed from "./Feed";
 import firebase from "firebase/app";
 import 'firebase/firestore';
@@ -12,9 +10,7 @@ import { app } from "./firebase/firebase.utils";
 
 function App() {
 
-
-
-//post type
+  //post type
   type postData = {
     id: string;
     text: string;
@@ -22,32 +18,32 @@ function App() {
     date: Date
   }
   let initDocsData: postData =
-    { id: '', text: 'Please Wait', images: [''], date: new Date()}
+    { id: '', text: 'Please Wait', images: [''], date: new Date() }
 
-  let docs :{docsData: postData[];} =
-  { docsData: [initDocsData] }
+  let docs: { docsData: postData[]; } =
+    { docsData: [initDocsData] }
 
   const [posts, setPosts] = useState(docs);
   const getPostsFromDatabase = (dbQuery: firebase.firestore.QuerySnapshot<firebase.firestore.DocumentData>
-    ) => {
-      let initDocsData: postData = 
-        { id: '', text: '', images: [''], date : new Date() }  // attention!
-      let docs :{docsData: postData[];} =
-        { docsData: [initDocsData] }
-      docs.docsData.pop()
-      dbQuery.forEach((doc) => {
-        let id = doc.id;
-        let text = doc.data().text;
-        let images = doc.data().images;
-        let date:Date = doc.data().date;
-        let newDoc: postData = { id:id, text: text, images: images, date:date };
-        docs.docsData = [newDoc, ...docs.docsData];
-      });
-      setPosts(docs)
-    }
+  ) => {
+    let initDocsData: postData =
+      { id: '', text: '', images: [''], date: new Date() }  // attention!
+    let docs: { docsData: postData[]; } =
+      { docsData: [initDocsData] }
+    docs.docsData.pop()
+    dbQuery.forEach((doc) => {
+      let id = doc.id;
+      let text = doc.data().text;
+      let images = doc.data().images;
+      let date: Date = doc.data().date;
+      let newDoc: postData = { id: id, text: text, images: images, date: date };
+      docs.docsData = [newDoc, ...docs.docsData];
+    });
+    setPosts(docs)
+  }
 
-    useEffect(() => {
-      const db = app.firestore();
+  useEffect(() => {
+    const db = app.firestore();
     db.collection("PostData")
       .get()
       .then((querySnapshot) => {
@@ -58,28 +54,21 @@ function App() {
       });
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[])
+  }, [])
   const username = {
-    fName : "Meir",
-    lName :  "Friedmann"};
-  
+    fName: "Meir",
+    lName: "Friedmann"
+  };
+
   return (
     <div className="App">
+
       <Header />
-  
-      <div className="Container">
-        <div className="Sidebar">
-          <Sidebar />
-        </div>
-        <div className="Feed">
-          <Feed 
+      <div className="body-container">
+        <Feed
           username={username}
-          posts = {posts}
-          />
-        </div>
-        <div className="Contacts">
-          <Contacts />
-        </div>
+          posts={posts}
+        />
       </div>
     </div>
   );

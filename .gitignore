@@ -25,3 +25,8 @@ yarn-error.log*
 # api keys
 .env     
 /src/firebase/firebase.utils.tsx  
+
+/future.tsx
+
+/src/Contacts.tsx
+/src/Sidebar.tsx

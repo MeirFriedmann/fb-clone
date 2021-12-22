@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import "./Feed.css";
-import MessageSender from "./MessageSender";
+import "./css/Feed.css";
+import MessageSender from "./CreatePostButton";
 import CreatePostWindow from "./CreatePostWindow";
 import Post from "./Post";
-import profilePic from "./css assets/4043272_avatar_lazybones_sloth_sluggard_icon.png"
+import profilePic from "./assets/4043272_avatar_lazybones_sloth_sluggard_icon.png"
 
 
 const Feed = (props: {
@@ -25,13 +25,13 @@ const Feed = (props: {
   const [localTempNewPost, setLocalTempNewPost] = useState("");
   const [newImages, setNewImages] = useState<File[]>([new File([""], "")]);
   const [newImagesPath, setNewImagesPath] = useState(['']);
-  const [isAddPhotoGlobal,setIsAddPhotoGlobal] = useState(false);
+  const [isAddPhotoGlobal, setIsAddPhotoGlobal] = useState(false);
 
   useEffect(() => {
     if (!isNewPostBeingComposed && !isNewPostWindowVisible)
       setGlobalTempNewPost(`What's on your mind, ${props.username.fName}?`);
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [globalTempNewPost, localTempNewPost]);
 
 
@@ -71,47 +71,12 @@ const Feed = (props: {
   }
 
   return (
-    <div className={
-      "feed"}>
+    <div className="feed">
       {isNewPostWindowVisible && <div
         className="opacity-solid"
-        onClick={() => {
-          toggleWindow();
-        }}
+        onClick={toggleWindow}
       ></div>}
-
-      <MessageSender
-        toggleWindow={toggleWindow}
-        isNewPostWindowVisible={isNewPostWindowVisible}
-        globalTempNewPost={globalTempNewPost}
-        isNewPostBeingComposed={isNewPostBeingComposed}
-        profilePic={profilePic}
-        setIsAddPhotoGlobal ={setIsAddPhotoGlobal}
-      />
-
-      {postsList?.map( ( post, key) =>
-      (
-        <Post
-          username={props.username.fName + ' ' + props.username.lName}
-          profilePic={profilePic}
-          text={post.text}
-          images={post.images}
-          date={post.date}
-          key = {key}
-
-        />
-      ))}
-
-      {props.posts.docsData.sort((p1, p2) => parseInt(p2.date.toString()) - parseInt(p1.date.toString())).map((post: any, key) => (
-        <Post
-          username={props.username.fName + ' ' + props.username.lName}
-          profilePic={profilePic}
-          text={post.text}
-          images={post.images}
-          date={new Date(post.date)}
-          key = {key}
-        />
-      ))}
+      <div className="width-adjust"></div>
       {
         isNewPostWindowVisible && (
           <div className="create_post_container">
@@ -126,12 +91,45 @@ const Feed = (props: {
               setNewImages={setNewImages}
               newImagesPath={newImagesPath}
               setNewImagesPath={setNewImagesPath}
-              isAddPhotoGlobal = {isAddPhotoGlobal}
-              removeImages = {removeImages}
+              isAddPhotoGlobal={isAddPhotoGlobal}
+              removeImages={removeImages}
             />
           </div>
         )
       }
+      <MessageSender
+        toggleWindow={toggleWindow}
+        isNewPostWindowVisible={isNewPostWindowVisible}
+        globalTempNewPost={globalTempNewPost}
+        isNewPostBeingComposed={isNewPostBeingComposed}
+        profilePic={profilePic}
+        setIsAddPhotoGlobal={setIsAddPhotoGlobal}
+      />
+
+      {postsList?.map((post, key) =>
+      (
+        <Post
+          username={props.username.fName + ' ' + props.username.lName}
+          profilePic={profilePic}
+          text={post.text}
+          images={post.images}
+          date={post.date}
+          key={key}
+
+        />
+      ))}
+
+      {props.posts.docsData.sort((p1, p2) => parseInt(p2.date.toString()) - parseInt(p1.date.toString())).map((post: any, key) => (
+        <Post
+          username={props.username.fName + ' ' + props.username.lName}
+          profilePic={profilePic}
+          text={post.text}
+          images={post.images}
+          date={new Date(post.date)}
+          key={key}
+        />
+      ))}
+      
 
     </div>
   );

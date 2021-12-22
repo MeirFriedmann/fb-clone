@@ -1,57 +1,50 @@
  .header {
   display: flex;
-  justify-content: space-evenly; 
+  justify-content:space-between; 
   align-items: center;
   background-color: #242526;
   display: flex;
   position: sticky;
   top:0;
-  z-index: 1;
+  z-index: 2;
   border-bottom: 1px solid #393A3B;
-  cursor:not-allowed;
-
+  width: 100vw;
 }
 
 .header__left {
-  /* flex: 0.2; */
-  z-index: 2;
+  margin-left:3rem;
   align-items: center;
-  /* border-style: solid; */
-  /* border-color: greenyellow; */
   display: flex;
   flex-direction: row;
-  /* width: 20rem; */
   width: 20vw;
   height: 9rem;
 }
 
-.header__middle{
-  flex: 0.1;
-  /* border-color: rgb(213, 47, 255); */
-  width: 10rem;
-  height: 9rem;
+@media (max-width: 1280px) {
+  .header__left {
+    margin-left:3rem;
+    /* border: red solid; */
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    width: 20vw;
+    height: 9rem;
+  }
 }
 
-.header__middle>img{
-  width: 65rem;
-  object-fit: cover ;
-  transform: translateX(-10rem);
-}
 .header__right > img{
   width: 35rem;
+  cursor: not-allowed;
   object-fit: cover ;
 }
+
 .header__right{
-  flex: 0.2;
-  width: 20rem;
-  height: 9rem;
+  margin-right: 3rem;
 }
 
 .search-box-container{
+  cursor: not-allowed;
   display: flex; 
-  /* width: 1rem; */
-  /* flex: 0;
-  width: 0; */
 }
 
 #logo{
@@ -65,6 +58,7 @@
 }
 
 .facebook-logo{
+  cursor: pointer;
   z-index: 3;
   flex: 0 0 5.3rem;
   margin-right: 1.0rem;

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./CreatePostWindow.css";
+import "./css/CreatePostWindow.css";
 import { app } from "./firebase/firebase.utils";
 import Images from "./Images";
 import PhotoLibraryIcon from "@material-ui/icons/PhotoLibrary"
@@ -126,6 +126,9 @@ const CreatePostWindow = (props: {
   const overlay_styles = {
     zIndex: parseInt(`${!isBlank(props.localTempNewPost) ? "1" : "-1"}`),
   };
+  const font_size_styles = {
+    fontSize: `${props.localTempNewPost.length < 20? "26px" : "20px"}`
+  }
   return (
     <div className="create_post">
       <div className="create_post__top">
@@ -151,6 +154,8 @@ const CreatePostWindow = (props: {
             }}
             placeholder={`What's on your mind, ${props.username}?`}
             autoFocus={true}
+            dir="auto"
+            style={font_size_styles}
           />
         </div>
         {props.newImagesPath.length > 1 && <div className="create_post__images">

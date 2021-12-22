@@ -6,59 +6,41 @@
     flex-direction: column;
     background-color: #242526;
     border-radius: 10px;
-    /* width: 70vw; */
-    height: 5rem;
+    flex: 0 0 6rem;
     width: 82.75rem;
     padding: 1.6rem 2rem;
 }
-
-
+@media (max-width: 780px) {
+    .messageSender{
+        width:84.9vw;
+        min-width: 57rem;
+    }
+}
 
 .messageSender__top_container{
     display: flex;
     justify-content:space;
-    /* padding: 0 1rem 1rem 1rem; */
     padding-bottom:  1rem ;
-    /* flex: 1 1 1; */
-    /* border: solid green; */
     border-bottom: 1px solid #3A3B3C;
 }
 
 
 .messageSender__top{
-    /* display: flex; */
-    /* flex: 1 1 1; */
     width: 100%;
-    /* height: 100px; */
-    /* border: solid salmon; */
     display: flex;
     align-items:center;
-    /* justify-content:space-between; */
 }
-
-
-/* .messageSender__form_container{ */
-    /* align-items: center; */
-    
-    /* justify-content: center; */
-    /* height: 8rem; */
-    /* border-radius: 10rem; */
-    /* width: 100%; */
-    /* display: flex; */
-    /* align-items: space; */
-    /* border: solid green; */
-    /* background-color: #5D5D5D; */
-/* } */
 
 .messageSender__top > form{
     width: 100%;
+    overflow: hidden;
+    max-height: 100%;
 }
 .messageSender__profile_pic{
     height: 6.3rem;
     margin-right: 1rem;
 }
 .messageSender__profile_pic>img{
-
     max-height: 100%;
 }
 @keyframes highlighting {
@@ -111,8 +93,7 @@
     height: 5rem;
     /* width: 27%; */
     border: none;
-    -webkit-font-smoothing: antialiased;
-
+    
     background-color: transparent;
     align-items: center;
     display: flex;
@@ -161,3 +142,5 @@
         margin: 1rem;
         display: flex;
     }
+
+    

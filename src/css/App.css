@@ -1,0 +1,10 @@
+.App{
+}
+.body-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+body {
+  color: #B0B3B8;
+}
