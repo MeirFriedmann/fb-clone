@@ -1,20 +1,15 @@
 .feed {
   display: flex;
-  flex: 0 0 700px;
+  width: 100%;
+  /* flex: 0 0 700px; */
   flex-direction: column;
-  padding: blue 10px;
-  /* border: red solid 3000px; */
-  /* outline: green; */
+  /* justify-content: flex-end; */
   align-items: center;
+  align-self: center;
+  justify-self: center;
+  margin-right: 0;
+  /* border: red solid 6px; */
 }
-
-.feed-no-scroll {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow: hidden;
-}
-
 
 .opacity-solid {
   z-index: 1;

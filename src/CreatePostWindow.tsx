@@ -78,6 +78,7 @@ const CreatePostWindow = (props: {
       for (let i = 0; i < e.target.files.length; i++) {
         props.setNewImages([...props.newImages, ...e.target.files]);
         const paths = [...e.target.files].map(obj => URL.createObjectURL(obj))
+        console.log(paths)
         props.setNewImagesPath(
           [...props.newImagesPath, ...paths]
         );

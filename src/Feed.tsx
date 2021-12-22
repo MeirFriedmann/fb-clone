@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./css/Feed.css";
-import MessageSender from "./CreatePostButton";
+import CreatePostButton from "./CreatePostButton";
 import CreatePostWindow from "./CreatePostWindow";
 import Post from "./Post";
 import profilePic from "./assets/4043272_avatar_lazybones_sloth_sluggard_icon.png"
@@ -76,7 +76,6 @@ const Feed = (props: {
         className="opacity-solid"
         onClick={toggleWindow}
       ></div>}
-      <div className="width-adjust"></div>
       {
         isNewPostWindowVisible && (
           <div className="create_post_container">
@@ -97,7 +96,7 @@ const Feed = (props: {
           </div>
         )
       }
-      <MessageSender
+      <CreatePostButton
         toggleWindow={toggleWindow}
         isNewPostWindowVisible={isNewPostWindowVisible}
         globalTempNewPost={globalTempNewPost}

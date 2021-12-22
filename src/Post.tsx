@@ -53,7 +53,7 @@ const Post = (props: { username: string, profilePic: string, text: string, image
         <div className="post_text">
             {props.text}
         </div>
-        {props.images[0]!=='' && 
+        {(props.images[0]!==''||(props.images[1]&&props.images[1]!==''))&&
         <Images
         images={props.images}
         />

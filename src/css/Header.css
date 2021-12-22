@@ -42,6 +42,12 @@
   margin-right: 3rem;
 }
 
+@media (max-width: 780px) {
+  .header__right{
+     display: none;
+  }
+}
+
 .search-box-container{
   cursor: not-allowed;
   display: flex; 
