@@ -1,10 +1,6 @@
-import React from "react";
-import "./Contacts.css";
-
-function Contacts(this: any) {
+function Contacts() {
     return (
         <div className="text">
-            <h1>Contactsssssssssssssssssssssssssssssss</h1>
         </div>
     )
 

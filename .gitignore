@@ -17,7 +17,16 @@
 .env.development.local
 .env.test.local
 .env.production.local
+oduction.local
 
-npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# api keys
+.env     
+/src/firebase/firebase.utils.tsx  
+
+/future.tsx
+
+/src/Contacts.tsx
+/src/Sidebar.tsx

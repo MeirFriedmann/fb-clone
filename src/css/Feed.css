@@ -1,0 +1,27 @@
+.feed {
+  display: flex;
+  flex: 0 0 700px;
+  flex-direction: column;
+  padding: blue 10px;
+  /* border: red solid 3000px; */
+  /* outline: green; */
+  align-items: center;
+}
+
+.feed-no-scroll {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+
+.opacity-solid {
+  z-index: 1;
+  position: absolute;
+  background-color: black;
+  height: 300vh;
+  width: 100vw;
+  opacity: 0.6;
+  top: 0;
+}

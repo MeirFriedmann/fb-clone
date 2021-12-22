@@ -1,5 +1,4 @@
-import React from "react";
-import "./SearchBox.css";
+import "./css/SearchBox.css";
 
 function SearchLogo() {
     return (
@@ -9,8 +8,8 @@ function SearchLogo() {
                 </div>
                 <div className="stick">
                     <div className="stick-circle">
-                        <div className="decoration2"></div>
                         <div className="decoration"></div>
+                        {/* <div className="decoration"></div> */}
                     </div>
                     <div className="trapeze"></div>
                     <div className="stick-little-circle"></div>
@@ -19,6 +18,7 @@ function SearchLogo() {
             <div className="inputsearch">
                 <input type="search" name="inputSearch"
                     id="inputSearch"
+                    autoComplete="off"
                     placeholder="Search Facebook"
                     onFocus={(e) => e.target.placeholder = ""}
                     onBlur={(e) => e.target.placeholder = "Search Facebook"}
