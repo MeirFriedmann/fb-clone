@@ -11,22 +11,12 @@
 # production
 /build
 
-# misc
-.DS_Store
-# .env.local
-# .env.development.local
-# .env.test.local
-# .env.production.local
-oduction.local
-
-yarn-debug.log*
-yarn-error.log*
 
 # api keys
-# .env     
-# /src/firebase/firebase.utils.tsx  
 
+
+# misc
+.DS_Store
+yarn-debug.log*
+yarn-error.log*
 /future.tsx
-
-/src/Contacts.tsx
-/src/Sidebar.tsx
