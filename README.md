@@ -1,22 +1,19 @@
-# Getting Started with Create React App
+# Facebook Clone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React TypeScript app that implements basic UI of facebook-like feed. A demo can be found [here](https://fb-clone-d26s.herokuapp.com/).
+****
+### Tools used
+`HTML` `CSS` `TypeScript` `React` `Firebase Storage` `Firestore` `git` `Heroku` `dotenv`
+****
+### Notable Features
 
-## Available Scripts
+**Reactiveness:** Using media queries and adaptive `CSS` units, the app is also suitable for mobile screens resolution.
 
-In the project directory, you can run:
+**Text Caching:** Using `React State` user can always resume post editing, and temporal text message is shown at the head of the page.   
 
-### `npm start`
+**Images Attachment:** Using `Firebase API`, user can upload images from local machine, preview them and embed in final post. The images are cached on local `React State` and may retrieved in future usage from Firestore DB. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
+**UX enhancement:** Using `flexbox` and `keyframes`, some nice features were added, for example: the way search bar (which is fully CSS made) is responding to screen resolution, or how buttons change color on hover. 
+****
+### What it does
+Demonstrating feed comprises of previous posts and gives the option to create new ones. Each post is comprised of time stamp and text, and can include images. 
