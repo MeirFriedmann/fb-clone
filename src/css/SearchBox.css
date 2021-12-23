@@ -14,7 +14,7 @@
   from {width: 15.5vw;}
   to {width: 5.5rem;}
 }
-@media (max-width: 780px) {
+@media (max-width: 1080px) {
   .container{
     animation-name: fade;
     animation-duration: 0.23s;

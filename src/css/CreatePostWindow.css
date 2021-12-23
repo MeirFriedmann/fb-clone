@@ -13,6 +13,17 @@
   top:30rem;
 }
 
+@media (max-width: 780px) {
+  .create_post{
+      width:98vw;
+      /* height: 110vw; */
+      position: absolute;
+      /* margin-right: auto; */
+
+      /* min-width: 57rem; */
+  }
+}
+
 .create_post > form {
   flex-basis: 360px;
   flex-grow: 1.3;
@@ -51,6 +62,12 @@
   font-weight: 650;
   font-size: 16px;
   border-radius: 6px;
+}
+
+@media (max-width: 780px) {
+.create_post__button {
+width: 94vw;
+}
 }
 
 .button_overlay {
@@ -219,7 +236,6 @@
 .create_post__images {
   padding-left: 2px;
   overflow: scroll;
-
   height: 350px;
   border-radius: 10px 10px 0 0;
   margin: 1rem;
@@ -227,6 +243,13 @@
   border: #353535 solid 1px;
   border-bottom: none;
 }
+
+@media (max-width: 780px) {
+.create_post__images {
+height: 60vw;
+}
+}
+
 .create_post__images::-webkit-scrollbar {
   width: 1em;
 }
@@ -266,7 +289,7 @@
 .exit_images_window {
   position: absolute;
   right: 7rem;
-  top: 19.8rem;
+  top: 22.8rem;
   transform: scale(0.8);
 }
 

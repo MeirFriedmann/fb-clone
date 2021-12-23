@@ -12,8 +12,12 @@
 }
 @media (max-width: 780px) {
     .messageSender{
-        width:84.9vw;
-        min-width: 57rem;
+        width:97vw;
+        padding: 1.6rem 0;
+        /* margin-right: auto; */
+
+        margin: 1.6rem  0 0.8rem  0;
+        /* min-width: 57rem; */
     }
 }
 
@@ -49,26 +53,22 @@
 }
 .messageSender__input{
     cursor: pointer;
-    /* width: 100%; */
-    /* flex-grow: 3; */
-    /* flex: 110000px; */
-    /* display: -webkit-box; */
-    /* outline-width: 0; */
     border: none;
     padding: 1.0rem 1.6rem;
-    
-    /* margin: 0 2rem; */
     border-radius: 10rem;
     color: #B0B3B8;
     background-color: #3A3B3C;
     font-family:'Segoe UI';  
     font-weight: normal;
     font-size: 20px;
-    /* flex: 1.9; */
-    /* display: flex; */
-    /* justify-content: left; */
     text-align: left;
-    
+    overflow: hidden;
+}
+
+@media (max-width: 780px) {
+    .messageSender__input{
+        font-size: 17px;
+    }
 }
 
 
@@ -82,7 +82,6 @@
 .messageSender__bottom {
     display: flex;
     padding-top: 1rem;
-    /* border: red solid; */
     justify-content: space-evenly;
     
 }

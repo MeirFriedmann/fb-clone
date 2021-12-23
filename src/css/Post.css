@@ -3,7 +3,7 @@
   width: 86.75rem;
   /* height: 30.25rem; */
   border-radius: 10px;
-  flex: 0 0 20rem;
+  /* flex: 0 0 65rem; */
   margin: 1rem;
   display: flex;
   flex-direction: column;
@@ -12,15 +12,14 @@
 
 @media (max-width: 780px) {
   .post {
-    width: 89.5vw;
-    min-width: 60.7rem;
+    width: 97vw;
+    margin: 0.8rem 1rem;
   }
 }
 
 .post__top {
   padding: 0 2rem;
   display: flex;
-  width: 100%;
   align-items: center;
 }
 
@@ -120,4 +119,10 @@
 
 .post_bottom {
   height: 3rem;
+}
+
+@media (max-width: 780px) {
+  .post_bottom {
+    display: none;
+  }
 }
