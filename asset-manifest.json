@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/fb-clone/static/css/main.75b297fe.chunk.css",
+    "main.js": "/fb-clone/static/js/main.7d5d5803.chunk.js",
+    "main.js.map": "/fb-clone/static/js/main.7d5d5803.chunk.js.map",
+    "runtime-main.js": "/fb-clone/static/js/runtime-main.41840a9c.js",
+    "runtime-main.js.map": "/fb-clone/static/js/runtime-main.41840a9c.js.map",
+    "static/js/2.799a15b8.chunk.js": "/fb-clone/static/js/2.799a15b8.chunk.js",
+    "static/js/2.799a15b8.chunk.js.map": "/fb-clone/static/js/2.799a15b8.chunk.js.map",
+    "index.html": "/fb-clone/index.html",
+    "static/css/main.75b297fe.chunk.css.map": "/fb-clone/static/css/main.75b297fe.chunk.css.map",
+    "static/js/2.799a15b8.chunk.js.LICENSE.txt": "/fb-clone/static/js/2.799a15b8.chunk.js.LICENSE.txt",
+    "static/media/4043272_avatar_lazybones_sloth_sluggard_icon.4083b114.png": "/fb-clone/static/media/4043272_avatar_lazybones_sloth_sluggard_icon.4083b114.png",
+    "static/media/facebook-f.517e0736.svg": "/fb-clone/static/media/facebook-f.517e0736.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.41840a9c.js",
+    "static/js/2.799a15b8.chunk.js",
+    "static/css/main.75b297fe.chunk.css",
+    "static/js/main.7d5d5803.chunk.js"
+  ]
+}
