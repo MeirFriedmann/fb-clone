@@ -1,6 +1,6 @@
 # Facebook Clone
 
-React TypeScript app that implements basic UI of facebook-like feed. A demo can be found [here](https://meirfriedmann.github.io/fb-clone/) (working best with Firefox).
+React TypeScript app that implements basic UI of facebook-like feed. A demo can be found [here](https://meirfriedmann.github.io/fb-clone/) (works best with Firefox).
 ****
 ### Tools used
 `HTML` `CSS` `TypeScript` `React.js` `Firebase Storage` `Firestore` `git` `Heroku` `dotenv`
